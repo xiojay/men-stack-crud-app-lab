@@ -26,6 +26,10 @@ app.listen(PORT, () => {
 
 const Game = require('./models/game.js')
 
+app.get('/', (req, res) => {
+  res.render('home')
+});
+
 app.get('/games', async (req, res) => {
     const games = await Game.find({})
     res.render('index', { games })
