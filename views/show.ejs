@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= game.title %></title>
+</head>
+<body>
+    <h1><%= game.title %></h1>
+    <% if (game.releaseDate) { %>
+        <p>Release Date: <%= (game.releaseDate).toDateString() %></p>
+    <% } else { %>
+        <p>Release Date: Not available</p>
+    <% } %>
+    <p>Developer: <%= game.developer %></p>
+    <a href="/games">Back to List</a>
+    <a href="/games/<%= game._id %>/edit">Edit Game</a>
+</body>
+</html>

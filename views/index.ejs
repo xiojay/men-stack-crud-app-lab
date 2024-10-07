@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayStation Horror Games</title>
+</head>
+<body>
+    <h1>PlayStation Horror Games</h1>
+    <a href="/games/new">Add New Game</a>
+    <ul>
+        <% games.forEach(game => { %>
+            <li>
+               <a href="/games/<%=game._id %>"> <%= game.title %></a>
+                <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+                <a href="/games/<%= game._id %>/edit">Edit</a>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

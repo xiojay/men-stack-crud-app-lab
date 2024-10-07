@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= game.title %></title>
+</head>
+<body>
+    <h1>Edit <%= game.title %></h1>
+    <form action="/games/<%= game._id %>?_method=PUT" method="POST">
+        <input type="text" name="title" value="<%= game.title %>" required>
+        <input type="text" name="developer" value="<%= game.developer %>" required> 
+        <input type="date" name="releaseDate" required>
+        <button type="submit">Update Game</button>
+    </form>
+    <a href="/games/<%= game._id %>">Cancel</a>
+</body>
+</html>
